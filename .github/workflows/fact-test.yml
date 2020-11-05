@@ -3,7 +3,9 @@ name : Test fact
 on : 
 
   push:
-    branches : [master]
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs: 
   build: 
@@ -23,3 +25,7 @@ jobs:
 
     - name : build 
       run : make install
+    
+
+    - name: Test
+      run: make test
