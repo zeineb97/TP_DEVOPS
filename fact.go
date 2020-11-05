@@ -7,7 +7,7 @@ import (
 	/*	"github.com/shirou/gopsutil/mem"*/)
 
 func fact(x int) int {
-	if x < -1 {
+	if x < 0 {
 		return -1
 	}
 

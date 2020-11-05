@@ -10,6 +10,5 @@ clean:
 	rm -r bin
 
 test: 
-	go test ./ ...
-
+	go test -v
 	
