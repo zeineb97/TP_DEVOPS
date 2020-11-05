@@ -9,4 +9,7 @@ start: install
 clean: 
 	rm -r bin
 
+test: 
+	go test ./ ...
+
 	
