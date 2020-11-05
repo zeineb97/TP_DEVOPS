@@ -8,11 +8,11 @@ import (
 	"github.com/shirou/gopsutil/mem"
 )
 
-func fact(n int) int {
-	if n == 0 {
+func fact(x int) int {
+	if x == 0 {
 		return 1
 	}
-	return n * fact(n-1)
+	return x * fact(x-1)
 }
 
 func main() {
