@@ -1,14 +1,22 @@
-OUTPUT= bin/
-install : 
-	mkdir bin/ || true
+OUTPUT=bin/
+
+
+
+install:
 	go get github.com/shirou/gopsutil/mem
+	
+build: install
+	mkdir bin/ || true
 	go build -o ${OUTPUT}/service fact.go
 
-start: install
+start: build
 	./${OUTPUT}/service
-clean: 
+
+clean:
 	rm -r bin
 
-test: 
-	go test -v
-	
+test: install
+	go test -v ./...
+
+benchmark: install
+	go test -run='^$\' -bench=. -benchmem
